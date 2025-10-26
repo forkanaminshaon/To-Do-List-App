@@ -1,0 +1,143 @@
+/* Basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #153677, #4e085f);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 540px;
+    margin: 20px;
+}
+
+.todo-app {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.todo-app h2 img {
+    width: 30px;
+}
+
+/* Input Row */
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #edeef0;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+#task-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 14px 0;
+    font-size: 16px;
+}
+
+#add-btn {
+    border: none;
+    outline: none;
+    padding: 14px 40px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.2s;
+}
+
+#add-btn:hover {
+    background: #e04a38;
+}
+
+/* Task List */
+#task-list {
+    list-style: none;
+}
+
+#task-list li {
+    font-size: 17px;
+    padding: 14px 12px 14px 50px; /* Space for custom bullet */
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.1s;
+}
+
+#task-list li:hover {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Custom bullet */
+#task-list li::before {
+    content: '';
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgNi40NzcyNSAxNy41MjI4IDIgMTIgMkM2LjQ3cyAyIDIuNDc3MjUgMiAxMkMyIDE3LjUyMjggNi40NzcyNSAyMiAxMiAyMlpNMTIgMjBDMTYuNDE4MyAyMCAyMCAxNi40MTgzIDIwIDEyQzIwIDcuNTgxNzIgMTYuNDE4MyA0IDEyIDRDNy41ODE3MiA0IDQgNy41ODE3MiA0IDEyQzQgMTYuNDE4MyA3LjU4MTcyIDIwIDEyIDIwWiIgZmlsbD0iI2M1YzdjZSIvPgo8L3N2Zz4K');
+    background-size: cover;
+    background-position: center;
+    top: 10px;
+    left: 10px;
+}
+
+/* Checked state */
+#task-list li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+#task-list li.checked::before {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgNi40NzcyNSAxNy41MjI4IDIgMTIgMkM2LjQ3NzI1IDIuNDc3MjUgMiAxMkMyIDE3LjUyMjggNi40NzcyNSAyMiAxMiAyMlpNMTYuNzA3MSA5LjcwNzExQzE3LjA5NzYgMTAuMDk3NiAxNy4wOTc2IDEwLjczMDggMTYuNzA3MSAxMS4xMjEzTDEwLjcwNzEgMTcuMTIxM0MxMC4zMTY2IDE3LjUxMTggOS42ODM0MiAxNy41MTE4IDkuMjkyODkgMTcuMTIxM0w3LjI5Mjg5IDE1LjEyMTNDNi45MDIzNyAxNC43MzA4IDYuOTAyMzcgMTQuMDk3NiA3LjI5Mjg5IDEzLjcwNzFDNy42ODM0MiAxMy4zMTY2IDguMzE2NTggMTMuMzE2NiA4LjcwNzEgMTMuNzA3MUwxMCAxNS4wMTAxTDE1LjI5MjkgOS43MDcxMUMxNS42ODM0IDkuMzE2NTggMTYuMzE2NiA5LjMxNjU4IDE2LjcwNzEgOS43MDcxMVoiIGZpbGw9IiM0YWFmNTAiLz4KPC9zdmc+Cg==');
+}
+
+/* Delete button (X) */
+#task-list li span {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: #777;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#task-list li span:hover {
+    background-color: #f0f0f0;
+    color: #ff5945;
+}
