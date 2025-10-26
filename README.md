@@ -26,9 +26,9 @@ To run this project locally, simply follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/todo-list-app.git](https://github.com/your-username/todo-list-app.git)
+    git clone [https://github.com/your-username/todo-list-app.git](https://github.com/forkanaminshaon)/todo-list-app.git)
     ```
-    *(Replace `your-username` with your GitHub username)*
+   
 
 2.  **Navigate to the project directory:**
     ```bash
